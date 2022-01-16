@@ -3,9 +3,8 @@ let elList = document.querySelector(".movies__list");
 let elSelect = document.querySelector(".select");
 let elFormSearch = document.querySelector(".form-search");
 
-elResult.textContent = films.length;
 
-elSelect.innerHTML = null;
+
 
 
 const generateGenres = function (films) {
@@ -89,8 +88,10 @@ elFormSearch.addEventListener("submit", function (evt) {
   });
   if(selectValue == "All"){
     renderFilms(films, elList);
+    elResult.textContent = films.length;
   } else {
     renderFilms(filteredFilms, elList);
+    elResult.textContent = filteredFilms.length;
   }
 });
 
